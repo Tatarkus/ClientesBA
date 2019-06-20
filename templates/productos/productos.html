@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Productos{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+
+  <form method="post">
+    <label for="idProducto">ID Producto</label>
+    <input name="idProducto" id="idProducto">
+    <input id="buscarProductos" type="button" value="Buscar">
+  </form>
+  <br>
+  <table id="mi_tabla" border="1">
+  	<tr>
+  		<td>ID</td>
+  		<td>Descripcion</td>
+  		<td>STOCK</td>
+  		<td>Precio</td>
+  	</tr>
+  </table>
+  <script type="text/javascript" src="{{ url_for('static', filename = 'js/javascript.js') }}"></script>
+
+{% endblock %}
