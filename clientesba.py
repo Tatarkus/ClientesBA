@@ -16,9 +16,10 @@ except OSError:
 conectarbd.init_app(app)
 
 #REGISTRAR LOS "BLUEPRINTS" CON LA APLICACION
-import autenticar, productos
+import autenticar, productos, mantenciones
 app.register_blueprint(autenticar.bp)
 app.register_blueprint(productos.bp)
+app.register_blueprint(mantenciones.bp)
 
  #VIEWS
 @app.route('/')
