@@ -10,23 +10,45 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body class="container-fluid">
-    <nav>
-        <h1>Clientes</h1>
-        <ul>
-          {% if g.user %}
-            <li><span>{{ g.user['username'] }}</span>
-            <li><a href="{{ url_for('autenticar.logout') }}">Cerrar Sesión</a>
-          {% else %}
-            <li><a href="{{ url_for('autenticar.registrar') }}">Registrar</a>
-            <li><a href="{{ url_for('autenticar.login') }}">Log In</a>
-          {% endif %}
-          <li><a href="{{ url_for('productos.obtenerProductos') }}">Productos</a>
-            <li><a href="{{ url_for('mantenciones.obtenerMantenciones') }}">Mantenciones</a>
-        </ul>
+<body class="container-fliud">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary text-white col-12 ">
+        <a class="navbar-brand" href="#">Buenos Aires</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+              {% if g.user %}
+              <li class="nav-item">
+                  <a class="nav-link text-white" href="{{ url_for('autenticar.logout') }}">Cerrar Sesión</a>
+                </li>
+               
+              {% else %}
+
+            
+            <li class="nav-item">
+              <a class="nav-link text-white" href="{{ url_for('autenticar.registrar') }}">Registrar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="{{ url_for('autenticar.login') }}">Iniciar Sesión</a>
+            </li>
+            {% endif %}
+            <li class="nav-item">
+                <a class="nav-link text-white" href="{{ url_for('productos.obtenerProductos') }}">Productos</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link text-white" href="{{ url_for('mantenciones.obtenerMantenciones') }}">Solicitar mantención</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{{ url_for('mantenciones.listarMantenciones') }}">Ver mis mantenciones</a>
+                  </li>
+          </ul>
+        </div>
       </nav>
+
+   
       <section class="content">
-        <header>
+        <header >
           {% block header %}{% endblock %}
         </header>
         {% for message in get_flashed_messages() %}

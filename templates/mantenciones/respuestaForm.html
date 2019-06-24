@@ -1,14 +1,25 @@
 {% extends 'base.html' %}
 
 {% block header %}
-  <h1 class="text-center">{% block title %}Mantenciones{% endblock %}</h1>
+  <h1 class="text-center display-3 text-dark pb-0 font-weight-light">{% block title %}Mantenciones{% endblock %}</h1>
+
   
 {% endblock %}
 
 {% block content %}
 <div class="row d-flex justify-content-center">
-    <h1 class="text-success">Felicidades {{result.username}} la solicitud de mantención se ha enviado con exito.</h1> 
     
+    <div class="jumbotron bg-light ">
+            <h1 class="display-4 text-secondary">Detalle de solicitud</h1>
+            <p class="lead">Emisor: {{result.username}}</p>
+
+            <p class="lead">Descripción: {{result.descripcion}}</p>
+            <hr class="my-4">
+            <p>Si tiene alguna duda sobre como funciona el sistema de solicitud de mantención puede llamar al numero de Buenos Aires.</p>
+            <p class="lead">
+              <a class="btn btn-primary btn-lg" href="#" role="button">volver</a>
+            </p>
+          </div>
 
 </div>
 

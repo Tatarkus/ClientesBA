@@ -1,25 +1,29 @@
 {% extends 'base.html' %}
 
 {% block header %}
-  <h1>{% block title %}Productos{% endblock %}</h1>
+<h1 class="text-center display-3 text-dark pb-0 mt-5 font-weight-light">{% block title %}Productos{% endblock %}</h1>
 {% endblock %}
 
 {% block content %}
-
-  <form method="post">
-    <label for="idProducto">ID Producto</label>
-    <input name="idProducto" id="idProducto">
-    <input id="buscarProductos" type="button" value="Buscar">
-  </form>
-  <br>
-  <table id="mi_tabla" border="1">
-  	<tr>
-  		<td>ID</td>
-  		<td>Descripcion</td>
-  		<td>STOCK</td>
-  		<td>Precio</td>
-  	</tr>
-  </table>
+<div class="col-12  d-flex justify-content-center">
+    <form method="post">
+      <label for="idProducto">ID Producto</label>
+      <input name="idProducto" id="idProducto">
+      
+      <button type="button" id="buscarProductos" class="btn btn-primary">Buscar</button>
+    </form>
+  </div>
+    <br>
+    <div class="d-flex justify-content-center">
+    <table id="mi_tabla"  class="table table-striped col-10">
+      <tr>
+        <td>ID</td>
+        <td>Descripcion</td>
+        <td>STOCK</td>
+        <td>Precio</td>
+      </tr>
+    </table>
+</div>
   <script type="text/javascript" src="{{ url_for('static', filename = 'js/javascript.js') }}"></script>
 
 {% endblock %}

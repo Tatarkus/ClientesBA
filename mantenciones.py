@@ -25,3 +25,8 @@ def obtenerMantenciones():
 	
 
 	return render_template('mantenciones/mantenciones.html')
+
+@bp.route('/verMantenciones', methods=('GET', 'POST'))
+def listarMantenciones():		
+
+	return render_template('mantenciones/verMantenciones.html')

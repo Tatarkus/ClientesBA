@@ -6,19 +6,19 @@ function poblar_tabla(productos) {
         var newRow   = tableRef.insertRow(tableRef.rows.length);
 
         var newCell  = newRow.insertCell(0);
-        var newText  = document.createTextNode(productos[i].id);
+        var newText  = document.createTextNode(productos[i].id_mantencion);
         newCell.appendChild(newText);
 
         var newCell  = newRow.insertCell(1);
-        var newText  = document.createTextNode(productos[i].descripcion);
+        var newText  = document.createTextNode(productos[i].id_usuario);
         newCell.appendChild(newText);
 
         var newCell  = newRow.insertCell(2);
-        var newText  = document.createTextNode(productos[i].stock  == null ? "-----" : productos[i].stock) ;
+        var newText  = document.createTextNode(productos[i].descripcion) ;
         newCell.appendChild(newText);
 
         var newCell  = newRow.insertCell(3);
-        var newText  = document.createTextNode(productos[i].precio  == null ? "-----" : productos[i].precio);
+        var newText  = document.createTextNode(productos[i].fechayhora);
         newCell.appendChild(newText);
 
     }
