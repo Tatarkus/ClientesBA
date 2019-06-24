@@ -28,7 +28,7 @@ function buscarMantenciones() {
 	idProducto = document.getElementById("idMantencion").value;
 	console.log("Conectandose con la API")
 	var request = new XMLHttpRequest();
-	request.open('GET', 'http://localhost:8080/mantenciones/'+idProducto, true);
+	request.open('GET', 'http://localhost:3001/mantenciones/'+idProducto, true);
 	request.responseType = 'json';
 	request.onreadystatechange = function(){
 		console.log(request.status);
