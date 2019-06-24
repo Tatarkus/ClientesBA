@@ -28,7 +28,7 @@ function buscarProductos() {
 	idProducto = document.getElementById("idProducto").value;
 	console.log("Conectandose con la API")
 	var request = new XMLHttpRequest();
-	request.open('GET', 'http://localhost:8080/mantenciones/'+idProducto, true);
+	request.open('GET', 'http://localhost:3000/productos/'+idProducto, true);
 	request.responseType = 'json';
 	request.onreadystatechange = function(){
 		console.log(request.status);
