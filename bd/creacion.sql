@@ -1,4 +1,5 @@
 DROP TABLE IF EXISTS user;
+DROP TABLE IF EXISTS mantencion;
 
 CREATE TABLE user(
   id INTEGER  PRIMARY KEY,
@@ -12,15 +13,3 @@ id_usuario int not null,
 descripcion varchar(30) not null,
 fechayhora datetime,
 foreign key (id_usuario) references usuario(id));
-
-
-/*
-create table despacho (
-id_despacho int AUTO_INCREMENT not null,
-id_usuario 
-producto text ,
-etapa_seguimiento varchar(30) not null,
-fechayhora datetime,
-primary key(id_despacho, id_producto));
-*/
-
