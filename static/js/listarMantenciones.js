@@ -1,31 +1,31 @@
-function poblar_tabla(productos) {
+function poblar_tabla(mantenciones) {
 	
-	console.log(productos);
+	
     var tableRef = document.getElementById('mi_tabla').getElementsByTagName('tbody')[0];
-    for (var i = 0 ; i < productos.length ; i++) {
+    for (var i = 0 ; i < mantenciones.length ; i++) {
         var newRow   = tableRef.insertRow(tableRef.rows.length);
 
         var newCell  = newRow.insertCell(0);
-        var newText  = document.createTextNode(productos[i].id_mantencion);
+        var newText  = document.createTextNode(mantenciones[i].id_mantencion);
         newCell.appendChild(newText);
 
         var newCell  = newRow.insertCell(1);
-        var newText  = document.createTextNode(productos[i].id_usuario);
+        var newText  = document.createTextNode(mantenciones[i].id_usuario);
         newCell.appendChild(newText);
 
         var newCell  = newRow.insertCell(2);
-        var newText  = document.createTextNode(productos[i].descripcion) ;
+        var newText  = document.createTextNode(mantenciones[i].descripcion) ;
         newCell.appendChild(newText);
 
         var newCell  = newRow.insertCell(3);
-        var newText  = document.createTextNode(productos[i].fechayhora);
+        var newText  = document.createTextNode(mantenciones[i].fechayhora);
         newCell.appendChild(newText);
 
     }
 }
 
-function buscarProductos() {
-	idProducto = document.getElementById("idProducto").value;
+function buscarMantenciones() {
+	idProducto = document.getElementById("idMantencion").value;
 	console.log("Conectandose con la API")
 	var request = new XMLHttpRequest();
 	request.open('GET', 'http://localhost:8080/mantenciones/'+idProducto, true);
@@ -44,5 +44,5 @@ function buscarProductos() {
 	
 
 }
-document.getElementById("buscarProductos").addEventListener("click", buscarProductos);
+document.getElementById("buscarMantenciones").addEventListener("click", buscarMantenciones);
 //document.getElementById("buscarProductos").onclick = buscarProductos();
