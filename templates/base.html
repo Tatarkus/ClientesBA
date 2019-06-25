@@ -18,16 +18,25 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
-              {% if g.user %}
-              <li class="nav-item">
-                 <a class="nav-link text-white" href="{{ url_for('autenticar.logout') }}">Cerrar Sesión</a>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="{{ url_for('pagar.realizarPago') }}">Pagar</a>
               </li>
-              <li class="nav-item">
+              {% if g.user %}
+              
+            <li class="nav-item">
+                <a class="nav-link text-white" href="{{ url_for('productos.obtenerProductos') }}">Productos</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link text-white" href="{{ url_for('mantenciones.obtenerMantenciones') }}">Solicitar mantención</a>
-             </li>
+            </li>
             <li class="nav-item">
               <a class="nav-link text-white" href="{{ url_for('mantenciones.listarMantenciones') }}">Ver mis mantenciones</a>
             </li>
+
+            <li class="nav-item">
+              <a class="nav-link text-white" href="{{ url_for('autenticar.logout') }}">Cerrar Sesión</a>
+           </li>
+
                
               {% else %}
 
@@ -39,13 +48,8 @@
               <a class="nav-link text-white" href="{{ url_for('autenticar.login') }}">Iniciar Sesión</a>
             </li>
             {% endif %}
-            <li class="nav-item">
-                <a class="nav-link text-white" href="{{ url_for('productos.obtenerProductos') }}">Productos</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white" href="{{ url_for('pagar.realizarPago') }}">Pagar</a>
-              </li>
-             
+
+
           </ul>
         </div>
       </nav>
