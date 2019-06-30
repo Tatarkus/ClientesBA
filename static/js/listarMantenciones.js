@@ -2,6 +2,7 @@ function poblar_tabla(mantenciones) {
 	
 	
     var tableRef = document.getElementById('mi_tabla').getElementsByTagName('tbody')[0];
+    tableRef.innerHTML="";
     for (var i = 0 ; i < mantenciones.length ; i++) {
         var newRow   = tableRef.insertRow(tableRef.rows.length);
 
