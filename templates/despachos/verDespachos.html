@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1 class="text-center display-3 text-dark pb-0 mt-5 mb-5 font-weight-light">{% block title %}Traza de seguimiento de despachos {{g.user['username']}} {% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+
+    <div class="col-12  d-flex justify-content-center">
+  <form method="post">
+    <label for="idUsuario">ID USUARIO</label>
+    <input name="idUsuario" id="idUsuario" value="{{ g.user['id'] }}" disabled>
+    <label for="idProducto">ID PRODUCTO</label>
+    <input name="idProducto" id="idProducto" >
+    
+    <button type="button" id="buscarDespachos" class="btn btn-primary">Filtrar</button>
+  </form>
+  </div>
+  <br>
+  <div class="col-12 d-flex justify-content-center">
+  <table id="mi_tabla" class="table table-striped col-10">
+
+   <thead>
+        <tr>
+            <td>Id Despacho</td>
+            <td>Id Producto</td>
+            <td>Estado del despacho</td>
+            <td>fecha</td>
+        </tr>
+    </thead>
+        <tbody></tbody>
+  
+  </table>
+  <script type="text/javascript" src="{{ url_for('static', filename = 'js/listarDespachos.js') }}"></script>
+
+
+
+{% endblock %}
